@@ -17,7 +17,7 @@ public class Pasajero {
     private String direccion;
     @Column(name = "PAIS")
     private String pais;
-    @OneToMany(mappedBy = "pasajeroCod", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "pasajero", cascade = CascadeType.ALL)
     private Set<Pasaje> pasajes;
 
     public Pasajero() {

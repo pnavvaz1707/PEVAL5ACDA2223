@@ -7,20 +7,17 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class VuelosMain {
-
-    //Insertar jugada
-    //Borrar partida
-    //Mostrar jugadas por nombre de partida
     private SessionFactory sessionFactory;
 
     public static void main(String[] args) {
         VuelosMain vuelosMain = new VuelosMain();
         vuelosMain.setup();
 
-        vuelosMain.insertarPasaje();
+//        vuelosMain.insertarPasaje();
         vuelosMain.consultarVuelo();
 
         vuelosMain.exit();
@@ -46,7 +43,7 @@ public class VuelosMain {
         System.out.println("Introduce el código del pasajero asociado");
         int codPasajero = teclado.nextInt();
         teclado.nextLine();
-        pasaje.setPasajeroCod(session.get(Pasajero.class, codPasajero));
+        pasaje.setPasajero(session.get(Pasajero.class, codPasajero));
 
         System.out.println("Introduce el código del vuelo asociado");
         String identificadorVuelo = teclado.nextLine();
@@ -74,15 +71,22 @@ public class VuelosMain {
     }
 
     private void consultarVuelo() {
-        System.out.println("Creación de pasaje");
         Session session = sessionFactory.openSession();
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Introduce el identificador de vuelo");
         String identificadorSel = teclado.nextLine();
 
-        Query q = session.createQuery("SELECT  FROM Vuelo WHERE identificador = :identificadorSel");
+        Query q = session.createQuery("FROM Pasaje WHERE vuelo.identificador = :identificadorSel");
         q.setParameter("identificadorSel", identificadorSel);
+
+        ArrayList<Pasaje> pasajes = (ArrayList<Pasaje>) q.getResultList();
+        for (Pasaje pasaje : pasajes) {
+            System.out.println("VUELO: " + pasaje.getVuelo().getIdentificador());
+            System.out.println("ORIGEN: " + pasaje.getVuelo().getAeropuertoOrigen() + "\tDESTINO: " + pasaje.getVuelo().getAeropuertoOrigen() + "\tFECHA: " + pasaje.getVuelo().getFecha());
+            System.out.println("\tCLASE: " + pasaje.getClase());
+            System.out.println("\t\tNombre pasajero: " + pasaje.getPasajero().getNombre() + "\tCódigo pasaje: " + pasaje.getCod() + "\tNúmero de asiento: " + pasaje.getNumAsiento());
+        }
 
         session.close();
     }

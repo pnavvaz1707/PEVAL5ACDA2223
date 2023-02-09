@@ -10,7 +10,7 @@ public class Pasaje {
     private int cod;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "PASAJERO_COD")
-    private Pasajero pasajeroCod;
+    private Pasajero pasajero;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "IDENTIFICADOR")
     private Vuelo vuelo;
@@ -32,12 +32,12 @@ public class Pasaje {
         this.cod = cod;
     }
 
-    public Pasajero getPasajeroCod() {
-        return pasajeroCod;
+    public Pasajero getPasajero() {
+        return pasajero;
     }
 
-    public void setPasajeroCod(Pasajero pasajeroCod) {
-        this.pasajeroCod = pasajeroCod;
+    public void setPasajero(Pasajero pasajero) {
+        this.pasajero = pasajero;
     }
 
     public Vuelo getVuelo() {

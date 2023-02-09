@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="Inicio">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
+    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="op2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasajero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasajero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +55,26 @@
       <recent name="C:\Users\pablo\IdeaProjects\PEVAL5ACDA2223\src\main\resources" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="VuelosMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="net.codejava.hibernate.VuelosMain" />
+      <module name="PEVAL5ACDA2223" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="net.codejava.hibernate.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VuelosMain" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -66,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1675931246299</updated>
       <workItem from="1675931571443" duration="1028000" />
-      <workItem from="1675935969216" duration="4404000" />
+      <workItem from="1675935969216" duration="5342000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1675939849289</created>
@@ -75,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675939849289</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="op2">
+      <created>1675942566617</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675942566617</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +119,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio" />
+    <MESSAGE value="op2" />
+    <option name="LAST_COMMIT_MESSAGE" value="op2" />
   </component>
 </project>
