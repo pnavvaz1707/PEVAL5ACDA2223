@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="Consulta hecha">
+    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="Casi termiano">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
       <workItem from="1675931571443" duration="1028000" />
       <workItem from="1675935969216" duration="5413000" />
       <workItem from="1675944531826" duration="589000" />
-      <workItem from="1676013833400" duration="1423000" />
+      <workItem from="1676013833400" duration="2403000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1675939849289</created>
@@ -107,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675943540389</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Casi termiano">
+      <created>1676015546155</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676015546155</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +134,7 @@
     <MESSAGE value="Inicio" />
     <MESSAGE value="op2" />
     <MESSAGE value="Consulta hecha" />
-    <option name="LAST_COMMIT_MESSAGE" value="Consulta hecha" />
+    <MESSAGE value="Casi termiano" />
+    <option name="LAST_COMMIT_MESSAGE" value="Casi termiano" />
   </component>
 </project>
