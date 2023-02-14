@@ -66,26 +66,26 @@ public class VuelosMain {
     }
 
     private void insertarPasaje() {
-        Session session = sessionFactory.openSession();
-        Pasaje pasaje = new Pasaje();
-
-        Query<Integer> queryMaxCodPasaje = session.createQuery("SELECT MAX(cod) FROM Pasaje");
-        pasaje.setCod(queryMaxCodPasaje.uniqueResult() + 1);
-
-        Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
-        pasaje.setPasajero(session.get(Pasajero.class, Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero asociado")));
-
-        pasaje.setVuelo(session.get(Vuelo.class, Utilidades.solicitarCadenaNoVacia("Introduce el identificador del vuelo asociado")));
-        pasaje.setNumAsiento(Utilidades.solicitarEnteroEnUnRango(0, 70, "Introduce el número de asiento"));
-        pasaje.setClase(Utilidades.solicitarCadenaNoVacia("Introduce la clase del vuelo"));
-        pasaje.setPvp(Utilidades.solicitarFloatEnUnRango(0, 550, "Introduce el precio del pasaje"));
-
-        session.beginTransaction();
-
-        session.save(pasaje);
-
-        session.getTransaction().commit();
-        session.close();
+//        Session session = sessionFactory.openSession();
+//        Pasaje pasaje = new Pasaje();
+//
+//        Query<Integer> queryMaxCodPasaje = session.createQuery("SELECT MAX(cod) FROM Pasaje");
+//        pasaje.setCod(queryMaxCodPasaje.uniqueResult() + 1);
+//
+//        Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
+//        pasaje.setPasajero(session.get(Pasajero.class, Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero asociado")));
+//
+//        pasaje.setVuelo(session.get(Vuelo.class, Utilidades.solicitarCadenaNoVacia("Introduce el identificador del vuelo asociado")));
+//        pasaje.setNumAsiento(Utilidades.solicitarEnteroEnUnRango(0, 70, "Introduce el número de asiento"));
+//        pasaje.setClase(Utilidades.solicitarCadenaNoVacia("Introduce la clase del vuelo"));
+//        pasaje.setPvp(Utilidades.solicitarFloatEnUnRango(0, 550, "Introduce el precio del pasaje"));
+//
+//        session.beginTransaction();
+//
+//        session.save(pasaje);
+//
+//        session.getTransaction().commit();
+//        session.close();
     }
 
     private void consultarPasaje() {
@@ -110,12 +110,12 @@ public class VuelosMain {
 
         Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
 
-        Query q = session.createQuery("UPDATE Pasajero SET nombre = :nombreNuevo, telefono = :telNuevo, direccion = :direccionNueva, pais = :paisNuevo  WHERE cod = :codPasajeroSel");
-        q.setParameter("codPasajeroSel", Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero que desee modificar"));
-        q.setParameter("nombreNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el nombre nuevo del pasajero"));
-        q.setParameter("telNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el teléfono nuevo del pasajero"));
-        q.setParameter("direccionNueva", Utilidades.solicitarCadenaNoVacia("Introduce la dirección nueva del pasajero"));
-        q.setParameter("paisNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el país nuevo del pasajero"));
+//        Query q = session.createQuery("UPDATE Pasajero SET nombre = :nombreNuevo, telefono = :telNuevo, direccion = :direccionNueva, pais = :paisNuevo  WHERE cod = :codPasajeroSel");
+//        q.setParameter("codPasajeroSel", Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero que desee modificar"));
+//        q.setParameter("nombreNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el nombre nuevo del pasajero"));
+//        q.setParameter("telNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el teléfono nuevo del pasajero"));
+//        q.setParameter("direccionNueva", Utilidades.solicitarCadenaNoVacia("Introduce la dirección nueva del pasajero"));
+//        q.setParameter("paisNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el país nuevo del pasajero"));
 
         System.out.println("Se han modificado " + q.executeUpdate() + " registros");
 
