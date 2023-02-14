@@ -13,16 +13,44 @@ import java.util.Scanner;
 public class VuelosMain {
     private SessionFactory sessionFactory;
 
+    /**
+     * Array que contiene las opciones del menú
+     */
+    private static final String[] MENU_OPCIONES = {
+            "Dar de alta un pasaje nuevo",
+            "Visualizar todos los datos de un pasaje dando su identificador de vuelo",
+            "Actualizar los datos de un pasajero",
+            "Dar de baja todos los pasajes de un pasajero dando su código de pasajero",
+            "Visualizar el importe total recaudado en los pasajes de un vuelo",
+            "Salir"
+    };
+
     public static void main(String[] args) {
         VuelosMain vuelosMain = new VuelosMain();
         vuelosMain.setup();
 
-//        vuelosMain.insertarPasaje();
-        vuelosMain.consultarPasaje();
-//        vuelosMain.actualizarPasajero();
-//        vuelosMain.darAltaPasajesDeUnPasajero();
-        vuelosMain.obtenerImporteRecaudadoDeUnVuelo();
+        int respuesta;
+        do {
+            respuesta = Utilidades.mostrarMenu(MENU_OPCIONES);
 
+            switch (respuesta) {
+                case 1:
+                    vuelosMain.insertarPasaje();
+                    break;
+                case 2:
+                    vuelosMain.consultarPasaje();
+                    break;
+                case 3:
+                    vuelosMain.actualizarPasajero();
+                    break;
+                case 4:
+                    vuelosMain.darBajaPasajesDeUnPasajero();
+                    break;
+                case 5:
+                    vuelosMain.obtenerImporteRecaudadoDeUnVuelo();
+                    break;
+            }
+        } while (respuesta != MENU_OPCIONES.length);
         vuelosMain.exit();
     }
 
@@ -38,32 +66,19 @@ public class VuelosMain {
     }
 
     private void insertarPasaje() {
-        System.out.println("Creación de pasaje");
         Session session = sessionFactory.openSession();
-        Scanner teclado = new Scanner(System.in);
         Pasaje pasaje = new Pasaje();
 
-        System.out.println("Introduce el código del pasajero asociado");
-        int codPasajero = teclado.nextInt();
-        teclado.nextLine();
-        pasaje.setPasajero(session.get(Pasajero.class, codPasajero));
+        Query<Integer> queryMaxCodPasaje = session.createQuery("SELECT MAX(cod) FROM Pasaje");
+        pasaje.setCod(queryMaxCodPasaje.uniqueResult() + 1);
 
-        System.out.println("Introduce el código del vuelo asociado");
-        String identificadorVuelo = teclado.nextLine();
-        pasaje.setVuelo(session.get(Vuelo.class, identificadorVuelo));
+        Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
+        pasaje.setPasajero(session.get(Pasajero.class, Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero asociado")));
 
-        System.out.println("Introduce el número de asiento");
-        int numAsiento = teclado.nextInt();
-        teclado.nextLine();
-        pasaje.setNumAsiento(numAsiento);
-
-        System.out.println("Introduce el número de asiento");
-        String clase = teclado.nextLine();
-        pasaje.setClase(clase);
-
-        System.out.println("Introduce el precio del pasaje");
-        float pvp = teclado.nextFloat();
-        pasaje.setPvp(pvp);
+        pasaje.setVuelo(session.get(Vuelo.class, Utilidades.solicitarCadenaNoVacia("Introduce el identificador del vuelo asociado")));
+        pasaje.setNumAsiento(Utilidades.solicitarEnteroEnUnRango(0, 70, "Introduce el número de asiento"));
+        pasaje.setClase(Utilidades.solicitarCadenaNoVacia("Introduce la clase del vuelo"));
+        pasaje.setPvp(Utilidades.solicitarFloatEnUnRango(0, 550, "Introduce el precio del pasaje"));
 
         session.beginTransaction();
 
@@ -75,13 +90,9 @@ public class VuelosMain {
 
     private void consultarPasaje() {
         Session session = sessionFactory.openSession();
-        Scanner teclado = new Scanner(System.in);
-
-        System.out.println("Introduce el identificador de vuelo");
-        String identificadorSel = teclado.nextLine();
 
         Query q = session.createQuery("FROM Pasaje WHERE vuelo.identificador = :identificadorSel");
-        q.setParameter("identificadorSel", identificadorSel);
+        q.setParameter("identificadorSel", Utilidades.solicitarCadenaNoVacia("Introduce el identificador de vuelo"));
 
         ArrayList<Pasaje> pasajes = (ArrayList<Pasaje>) q.getResultList();
         for (Pasaje pasaje : pasajes) {
@@ -96,37 +107,22 @@ public class VuelosMain {
 
     private void actualizarPasajero() {
         Session session = sessionFactory.openSession();
-        Scanner teclado = new Scanner(System.in);
 
-        System.out.println("Introduce el código del pasajero que desee modificar");
-        int codPasajeroSel = teclado.nextInt();
-        teclado.nextLine();
-
-        System.out.println("Introduce el nombre nuevo del pasajero");
-        String nombreNuevo = teclado.nextLine();
-
-        System.out.println("Introduce el teléfono nuevo del pasajero");
-        String telNuevo = teclado.nextLine();
-
-        System.out.println("Introduce la dirección nueva del pasajero");
-        String direccionNueva = teclado.nextLine();
-
-        System.out.println("Introduce el país nuevo del pasajero");
-        String paisNuevo = teclado.nextLine();
+        Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
 
         Query q = session.createQuery("UPDATE Pasajero SET nombre = :nombreNuevo, telefono = :telNuevo, direccion = :direccionNueva, pais = :paisNuevo  WHERE cod = :codPasajeroSel");
-        q.setParameter("codPasajeroSel", codPasajeroSel);
-        q.setParameter("nombreNuevo", nombreNuevo);
-        q.setParameter("telNuevo", telNuevo);
-        q.setParameter("direccionNueva", direccionNueva);
-        q.setParameter("paisNuevo", paisNuevo);
+        q.setParameter("codPasajeroSel", Utilidades.solicitarEnteroEnUnRango(0, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero que desee modificar"));
+        q.setParameter("nombreNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el nombre nuevo del pasajero"));
+        q.setParameter("telNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el teléfono nuevo del pasajero"));
+        q.setParameter("direccionNueva", Utilidades.solicitarCadenaNoVacia("Introduce la dirección nueva del pasajero"));
+        q.setParameter("paisNuevo", Utilidades.solicitarCadenaNoVacia("Introduce el país nuevo del pasajero"));
 
         System.out.println("Se han modificado " + q.executeUpdate() + " registros");
 
         session.close();
     }
 
-    private void darAltaPasajesDeUnPasajero() {
+    private void darBajaPasajesDeUnPasajero() {
         Session session = sessionFactory.openSession();
         Scanner teclado = new Scanner(System.in);
 

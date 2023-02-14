@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="Casi termiano">
+    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="p">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Utilidades.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +53,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\pablo\IdeaProjects\PEVAL5ACDA2223\src\main\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.codejava.hibernate" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="VuelosMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -85,6 +90,9 @@
       <workItem from="1675944531826" duration="589000" />
       <workItem from="1676013833400" duration="3273000" />
       <workItem from="1676018024385" duration="3499000" />
+      <workItem from="1676119651821" duration="53000" />
+      <workItem from="1676272420103" duration="2454000" />
+      <workItem from="1676371088588" duration="6543000" />
     </task>
     <task id="LOCAL-00001" summary="Inicio">
       <created>1675939849289</created>
@@ -128,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676017141227</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="p">
+      <created>1676119692493</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1676119692493</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +165,7 @@
     <MESSAGE value="op2" />
     <MESSAGE value="Consulta hecha" />
     <MESSAGE value="Casi termiano" />
-    <option name="LAST_COMMIT_MESSAGE" value="Casi termiano" />
+    <MESSAGE value="p" />
+    <option name="LAST_COMMIT_MESSAGE" value="p" />
   </component>
 </project>
