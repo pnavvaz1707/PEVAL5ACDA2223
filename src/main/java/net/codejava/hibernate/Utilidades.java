@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class Utilidades {
 
+    /**
+     * Método para mostrar un menú y pedirle al usuario que seleccione una opción
+     *
+     * @param MENU_OPCIONES (Array de Strings que contiene las opcines del menú)
+     * @return devuelve un número entero con la posición de la opción elegida del menú
+     */
     public static int mostrarMenu(String[] MENU_OPCIONES) {
         System.out.println("//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
         for (int i = 0; i < MENU_OPCIONES.length; i++) {
@@ -18,6 +24,14 @@ public class Utilidades {
         return opcionSel;
     }
 
+    /**
+     * Método para solicitar un número entero comprendido entre 2 números pasados como parámetro
+     *
+     * @param limiteInferior (Número que representa el límite inferior)
+     * @param limiteSuperior (Número que representa el límite superior)
+     * @param msg            (Mensaje para solicitar el número al usuario)
+     * @return devuelve el número entero introducido por el usuario
+     */
     public static int solicitarEnteroEnUnRango(int limiteInferior, int limiteSuperior, String msg) {
         Scanner teclado = new Scanner(System.in);
         boolean sigue = true;
@@ -44,6 +58,14 @@ public class Utilidades {
         return num;
     }
 
+    /**
+     * Método para solicitar un número tipo float comprendido entre 2 números pasados como parámetro
+     *
+     * @param limiteInferior (Número que representa el límite inferior)
+     * @param limiteSuperior (Número que representa el límite superior)
+     * @param msg            (Mensaje para solicitar el número al usuario)
+     * @return devuelve el número tipo float introducido por el usuario
+     */
     public static float solicitarFloatEnUnRango(int limiteInferior, int limiteSuperior, String msg) {
         Scanner teclado = new Scanner(System.in);
         boolean sigue = true;
@@ -70,6 +92,12 @@ public class Utilidades {
         return num;
     }
 
+    /**
+     * Método para solicitar una cadena que no esté vacía
+     *
+     * @param msg (Mensaje para solicitar la cadena al usuario)
+     * @return devuelve la cadena introducida por el usuario
+     */
     public static String solicitarCadenaNoVacia(String msg) {
         Scanner teclado = new Scanner(System.in);
         boolean sigue = true;
@@ -90,12 +118,5 @@ public class Utilidades {
             }
         }
         return cadena;
-    }
-
-    public static String solicitarCadena(String msg) {
-        Scanner teclado = new Scanner(System.in);
-        System.out.println(msg);
-
-        return teclado.nextLine();
     }
 }

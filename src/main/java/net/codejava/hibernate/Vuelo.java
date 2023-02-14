@@ -4,23 +4,52 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
+/**
+ * Entidad llamada Vuelo que representa la tabla "vuelo"
+ */
 @Entity
 @Table(name = "vuelo")
 public class Vuelo {
+    /**
+     * Campo tipo String y clave primaria con nombre "IDENTIFICADOR" de la tabla "vuelo"
+     */
     @Id
     @Column(name = "IDENTIFICADOR")
     private String identificador;
+
+    /**
+     * Campo tipo String con nombre "AEROPUERTO_ORIGEN" de la tabla "vuelo"
+     */
     @Column(name = "AEROPUERTO_ORIGEN")
     private String aeropuertoOrigen;
+
+    /**
+     * Campo tipo String con nombre "AEROPUERTO_DESTINO" de la tabla "vuelo"
+     */
     @Column(name = "AEROPUERTO_DESTINO")
     private String aeropuertoDestino;
+
+    /**
+     * Campo tipo String con nombre "TIPO_VUELO" de la tabla "vuelo"
+     */
     @Column(name = "TIPO_VUELO")
     private String tipo;
+
+    /**
+     * Campo tipo String con nombre "FECHA_VUELO" de la tabla "vuelo"
+     */
     @Column(name = "FECHA_VUELO")
     private Date fecha;
+
+    /**
+     * Campo tipo Set<Pasajes> mapeado por el campo "vuelo" del objeto Pasaje
+     */
     @OneToMany(mappedBy = "vuelo", cascade = CascadeType.ALL)
     private Set<Pasaje> pasajes;
 
+    /**
+     * Constructor por defecto de la clase Vuelo
+     */
     public Vuelo() {
     }
 
