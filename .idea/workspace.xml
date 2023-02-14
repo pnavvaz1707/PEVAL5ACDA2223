@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="p">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasaje.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasajero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Pasajero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Utilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Utilidades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Vuelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/Vuelo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/VuelosMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/codejava/hibernate/GestionarVuelos.java" afterDir="false" />
-    </list>
+    <list default="true" id="604f2e5d-ceb2-4c79-89ac-4b0f7dfafc5e" name="Changes" comment="Casi terminao" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +32,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -164,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676119692493</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Casi terminao">
+      <created>1676411758245</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1676411758245</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +186,7 @@
     <MESSAGE value="Consulta hecha" />
     <MESSAGE value="Casi termiano" />
     <MESSAGE value="p" />
-    <option name="LAST_COMMIT_MESSAGE" value="p" />
+    <MESSAGE value="Casi terminao" />
+    <option name="LAST_COMMIT_MESSAGE" value="Casi terminao" />
   </component>
 </project>
