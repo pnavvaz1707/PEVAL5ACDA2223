@@ -46,22 +46,28 @@ public class GestionarVuelos {
         Query<Integer> queryMaxCodPasajero = session.createQuery("SELECT MAX(cod) FROM Pasajero");
         pasaje.setPasajero(session.get(Pasajero.class, Utilidades.solicitarEnteroEnUnRango(1, queryMaxCodPasajero.uniqueResult(), "Introduce el código del pasajero asociado")));
 
+        System.out.println("Pasajero sel --> " + pasaje.getPasajero().getNombre());
+
         pasaje.setVuelo(session.get(Vuelo.class, Utilidades.solicitarCadenaNoVacia("Introduce el identificador del vuelo asociado")));
 
         Query<Integer> queryMaxNumAsiento = session.createQuery("SELECT MAX(numAsiento) FROM Pasaje");
         boolean sigue = true;
 
+        int numAsientoSel = 0;
+
         while (sigue) {
-            int numAsientoSel = Utilidades.solicitarEnteroEnUnRango(1, queryMaxNumAsiento.uniqueResult(), "Introduce el número de asiento");
+            numAsientoSel = Utilidades.solicitarEnteroEnUnRango(1, queryMaxNumAsiento.uniqueResult(), "Introduce el número de asiento");
             Query<Integer> queryNumAsiento = session.createQuery("SELECT numAsiento FROM Pasaje WHERE numAsiento = " + numAsientoSel);
 
-            if (queryNumAsiento.uniqueResult() > 0 || queryNumAsiento.uniqueResult() == null) {
-                System.out.println("El asiento " + numAsientoSel + " está ocupado");
+            System.out.println("Consulta asiento --> " + queryNumAsiento.uniqueResult());
+            if (queryNumAsiento.uniqueResult() == null) {
                 sigue = false;
+            } else {
+                System.out.println("El asiento " + numAsientoSel + " está ocupado");
             }
         }
 
-        pasaje.setNumAsiento(Utilidades.solicitarEnteroEnUnRango(0, 70, "Introduce el número de asiento"));
+        pasaje.setNumAsiento(numAsientoSel);
         pasaje.setClase(Utilidades.solicitarCadenaNoVacia("Introduce la clase del vuelo"));
         pasaje.setPvp(Utilidades.solicitarFloatEnUnRango(0, 550, "Introduce el precio del pasaje"));
 
